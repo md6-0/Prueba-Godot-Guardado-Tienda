@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6oq2ngj8td4u"]
+
+[ext_resource type="Script" path="res://scenes/menu/menu.gd" id="1_ljyvu"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_ljyvu")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 587.0
+offset_top = 287.0
+offset_right = 627.0
+offset_bottom = 310.0
+
+[node name="AddCredits" type="Button" parent="."]
+offset_left = 476.0
+offset_top = 285.0
+offset_right = 562.0
+offset_bottom = 316.0
+text = "+1 CREDIT"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 587.0
+offset_top = 338.0
+offset_right = 627.0
+offset_bottom = 361.0
+
+[node name="AddGems" type="Button" parent="."]
+offset_left = 476.0
+offset_top = 327.0
+offset_right = 562.0
+offset_bottom = 358.0
+text = "+1 GEMS"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 475.0
+offset_top = 240.0
+offset_right = 596.0
+offset_bottom = 271.0
+text = "DeleteSaveFile"
+
+[node name="Store_Button" type="Button" parent="."]
+offset_left = 476.0
+offset_top = 374.0
+offset_right = 525.0
+offset_bottom = 405.0
+text = "Store"
+
+[connection signal="pressed" from="AddCredits" to="." method="_on_add_credits_pressed"]
+[connection signal="pressed" from="AddGems" to="." method="_on_add_gems_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Store_Button" to="." method="_on_store_button_pressed"]

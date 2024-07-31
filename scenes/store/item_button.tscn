@@ -1,0 +1,95 @@
+[gd_scene load_steps=4 format=3 uid="uid://clu6ua2i4lm4b"]
+
+[ext_resource type="Script" path="res://scenes/store/item_button.gd" id="1_6rwbp"]
+[ext_resource type="AudioStream" uid="uid://5cxngkoydefl" path="res://sfx/error_style_5_echo_001.wav" id="2_hhaeu"]
+[ext_resource type="AudioStream" uid="uid://b8a6gnrmo2tmh" path="res://sfx/confirm_style_5_echo_002.wav" id="3_1xql0"]
+
+[node name="StoreItem" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -3.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6rwbp")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+offset_left = -8.0
+offset_top = 2.0
+offset_right = 252.0
+offset_bottom = 377.0
+
+[node name="Name_Label" type="Label" parent="Button"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -45.5
+offset_top = 22.0
+offset_right = 49.5
+offset_bottom = 50.0
+grow_horizontal = 2
+autowrap_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="Button"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.5
+offset_top = -122.5
+offset_right = 84.5
+offset_bottom = 51.5
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 2
+
+[node name="Description_Label" type="Label" parent="Button"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.5
+offset_top = 78.5
+offset_right = 123.5
+offset_bottom = 106.5
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Credits_Label" type="Label" parent="Button"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -122.5
+offset_top = -33.0
+offset_right = 123.5
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Error_Audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_hhaeu")
+
+[node name="Success_Audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1xql0")
+
+[connection signal="pressed" from="Button" to="." method="_on_buy_button_pressed"]
